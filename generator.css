@@ -45,6 +45,11 @@ input[type="text"], textarea {
     font-size: 1em;
 }
 
+input[type="text"][readonly] {
+    background-color: #eee;
+    color: #777;
+}
+
 textarea {
     resize: vertical;
     font-family: Arial, sans-serif;
@@ -76,10 +81,11 @@ button:hover {
     background-color: #555;
 }
 
-#copyStatus {
+.copy-status {
     display: block;
     text-align: center;
     margin-top: 10px;
     color: #4CAF50;
     font-weight: bold;
+    font-size: 0.9em;
 }
