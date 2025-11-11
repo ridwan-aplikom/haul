@@ -2,53 +2,72 @@ window.addEventListener('DOMContentLoaded', () => {
     const baseUrl = document.getElementById('baseUrl');
     const guestNameInput = document.getElementById('guestNameInput');
     const generateBtn = document.getElementById('generateBtn');
+    
+    const resultNarasi = document.getElementById('resultNarasi');
+    const copyNarasiBtn = document.getElementById('copyNarasiBtn');
+    const copyNarasiStatus = document.getElementById('copyNarasiStatus');
+    
     const resultUrl = document.getElementById('resultUrl');
-    const copyBtn = document.getElementById('copyBtn');
-    const copyStatus = document.getElementById('copyStatus');
+    const copyLinkBtn = document.getElementById('copyLinkBtn');
+    const copyLinkStatus = document.getElementById('copyLinkStatus');
 
     generateBtn.addEventListener('click', () => {
-        let base = baseUrl.value;
-        const name = guestNameInput.value;
+        const base = baseUrl.value;
+        const cleanName = guestNameInput.value;
 
-        if (!base || !name) {
-            alert('Isi dulu Base URL dan Nama Tamu, Bos!');
+        if (!cleanName) {
+            alert('Isi dulu Nama Tamu, Bos!');
             return;
         }
 
-        // Membersihkan Base URL
-        if (!base.startsWith('http://') && !base.startsWith('https://')) {
-            base = 'https://' + base;
-        }
-        if (base.endsWith('/')) {
-            base = base.slice(0, -1);
-        }
-
-        // Mengubah spasi menjadi underscore
-        const transformedName = name.replace(/ /g, '_');
-
-        // Menghasilkan URL final
+        const transformedName = cleanName.replace(/ /g, '_');
         const finalUrl = `${base}/index.html?to=${transformedName}`;
-        
+
+        const narasi = `Bismillahirrahmannirrahim.
+
+Assalamu'alaikum Warahmatullahi Wabarakatuh.
+
+Kepada Yth.
+${cleanName}
+
+Tanpa mengurangi rasa hormat, kami sekeluarga mengundang Anda untuk turut hadir dan mendoakan dalam acara Tahlil Haul Almarhum & Almarhumah keluarga kami.
+
+Informasi lengkap mengenai waktu dan tempat dapat dilihat pada link undangan digital berikut:
+${finalUrl}
+
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir.
+Jazakumullah Khairan Katsiran.
+
+Wassalamu'alaikum Warahmatullahi Wabarakatuh.`;
+
+        resultNarasi.value = narasi;
         resultUrl.value = finalUrl;
-        copyStatus.textContent = '';
+        
+        copyNarasiStatus.textContent = '';
+        copyLinkStatus.textContent = '';
     });
 
-    copyBtn.addEventListener('click', () => {
-        const urlToCopy = resultUrl.value;
+    copyNarasiBtn.addEventListener('click', () => {
+        const textToCopy = resultNarasi.value;
+        if (!textToCopy) return;
 
-        if (!urlToCopy) {
-            alert('Buat link dulu baru disalin.');
-            return;
-        }
-
-        navigator.clipboard.writeText(urlToCopy).then(() => {
-            copyStatus.textContent = 'Berhasil disalin!';
-            setTimeout(() => {
-                copyStatus.textContent = '';
-            }, 2000);
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            copyNarasiStatus.textContent = 'Narasi berhasil disalin!';
+            setTimeout(() => { copyNarasiStatus.textContent = ''; }, 2000);
         }).catch(err => {
-            copyStatus.textContent = 'Gagal menyalin!';
-            console.error('Error copying to clipboard:', err);
+            copyNarasiStatus.textContent = 'Gagal menyalin!';
+        });
+    });
+
+    copyLinkBtn.addEventListener('click', () => {
+        const textToCopy = resultUrl.value;
+        if (!textToCopy) return;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            copyLinkStatus.textContent = 'Link berhasil disalin!';
+            setTimeout(() => { copyLinkStatus.textContent = ''; }, 2000);
+        }).catch(err => {
+            copyLinkStatus.textContent = 'Gagal menyalin!';
         });
     });
 });
