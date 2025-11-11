@@ -12,7 +12,7 @@
         
         <div class="input-group">
             <label for="baseUrl">Base URL Website Anda:</label>
-            <input type="text" id="baseUrl" value="kirimundangan.vercel.app" placeholder="Contoh: https://website-anda.vercel.app">
+            <input type="text" id="baseUrl" value="https://undangan-haul-mursalin-ht.vercel.app" readonly>
         </div>
 
         <div class="input-group">
@@ -20,14 +20,22 @@
             <input type="text" id="guestNameInput" placeholder="Contoh: Bapak Arip & Keluarga">
         </div>
 
-        <button id="generateBtn">Buat Link</button>
+        <button id="generateBtn">Buat Link & Narasi</button>
 
         <div class="output-group">
-            <label for="resultUrl">Link Siap Sebar:</label>
-            <textarea id="resultUrl" rows="3" readonly></textarea>
-            <button id="copyBtn">Salin Link</button>
-            <span id="copyStatus"></span>
+            <label for="resultNarasi">Narasi Lengkap (Siap Sebar):</label>
+            <textarea id="resultNarasi" rows="12" readonly></textarea>
+            <button id="copyNarasiBtn">Salin Narasi</button>
+            <span id="copyNarasiStatus" class="copy-status"></span>
         </div>
+        
+        <div class="output-group">
+            <label for="resultUrl">Link Saja (Opsional):</label>
+            <textarea id="resultUrl" rows="2" readonly></textarea>
+            <button id="copyLinkBtn">Salin Link Saja</button>
+            <span id="copyLinkStatus" class="copy-status"></span>
+        </div>
+
     </div>
     <script src="generator.js"></script>
 </body>
