@@ -115,7 +115,7 @@ body, html {
 
 .arabic.bismillah {
     font-family: 'Scheherazade New', serif;
-    font-size: 2.8em;
+    font-size: 1.8em;
     color: var(--color-primary);
     margin: 0 0 20px 0;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
