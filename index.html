@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tahlil Haul</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400&family=Scheherazade+New:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="cover" class="layar cover-bg">
+        
+        <div class="flower-animation-container"></div>
+
+        <div class="icon-container animate__fadeInDown">
+            <svg class="envelope-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+        </div>
+        <div class="konten-cover animate__fadeInUp">
+            <p class="to-text">Kepada Yth.</p>
+            <h2 id="guestName" class="guest-name">Bapak/Ibu/Saudara/i</h2>
+            <p class="invite-text">Dengan hormat mengundang Anda ke acara kami.</p>
+            <button id="openButton" class="open-button">Buka Undangan</button>
+        </div>
+    </div>
+
+    <div id="invitation" class="layar invitation-bg" style="display: none;">
+        
+        <div class="flower-animation-container"></div>
+        <div class="header-flower-container"></div> 
+
+        <div class="scroll-container">
+
+            <p class="arabic bismillah animate__fadeIn">Bismillahirrahmanirrahim</p>
+            
+            <h1 class="main-title animate__fadeIn">UNDANGAN TAHLIL & YASIN</h1>
+            
+            <p class="intro-paragraph animate__fadeIn">Dengan memohon rahmat dan ridho Allah SWT, kami mengharapkan kehadiran Bapak/Ibu/Saudara pada acara Tahlil Haul Orang Tua dan Kakak kami:</p>
+
+            <div class="haul-container">
+                <div class="haul-card animate__fadeInLeft">
+                    <img src="webbabeh.png" alt="Alm. Mursalin HT">
+                    <h3>Haul ke 2</h3>
+                    <p>Almarhum Mursalin HT<br>bin H. Djainusih</p> 
+                </div>
+                <div class="haul-card animate__fadeInRight">
+                    <img src="webkak.png" alt="Almh. Neneng M">
+                    <h3>Haul ke 16</h3>
+                    <p>Almarhumah Neneng M<br>binti Mursalin HT</p> 
+                </div>
+            </div>
+
+            <h2 class="sub-title animate__fadeIn">WAKTU & TEMPAT ACARA</h2>
+
+            <div class="invitation-details animate__fadeInUp">
+                <div class="detail-item">
+                    <h3>Tanggal</h3>
+                    <p>Sabtu, 29 November 2025</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Waktu</h3>
+                    <p>Ba'da Isya</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Penceramah</h3>
+                    <p>Ust. Muhammad Firdaus MA</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Undangan</h3>
+                    <p>Pengajian Bapak-Bapak</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Tempat</h3>
+                    <p>Jl. H. Saikin RT 012 RW 008 No. 44</p>
+                    
+                    <a href="https://maps.app.goo.gl/7vYsWHjacqUXgxfY6?g_st=awb" target="_blank" class="maps-button">Lihat di Google Maps</a>
+                </div>
+            </div>
+
+            <p class="closing-paragraph animate__fadeInUp">Merupakan suatu kehormatan bagi kami, jika Bapak/Ibu/Saudara dapat berkenan memanjatkan doa bagi Almarhum/Almarhumah. Atas kehadiran Anda, kami ucapkan jazakumullah khairan katsiran.</p>
+            
+            <a href="web_tahlil.pdf" download="Undangan_Tahlil_Haul.pdf" class="download-button">
+                Download Undangan (PDF)
+            </a>
+
+        </div>
+        
+        <div class="footer-flower-container"></div> 
+
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
